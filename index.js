@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-app.use(cors({ credentials: true, origin: "http://localhost:8080" }));
+app.use(cors({ credentials: true, origin: true }));
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,

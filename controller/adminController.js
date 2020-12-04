@@ -48,6 +48,8 @@ export const postAdminLogin = (req, res, next) => {
 // export const postAdminLogin = passport.authenticate("local");
 
 // admin logout
-export const getAdminLogout = (req, res) => {
-  res.send("logout");
+export const getAdminLogout = (req, res, next) => {
+  req.logout();
+  res.send("LoggedOut");
+  next();
 };
