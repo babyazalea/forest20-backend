@@ -15,6 +15,7 @@ import flash from "express-flash";
 import routes from "./routes";
 import globalRouter from "./router/globalRouter";
 import adminRouter from "./router/adminRouter";
+import portfolioRouter from "./router/portfolioRouter";
 
 import "./models/Admin";
 import "./passport";
@@ -45,6 +46,7 @@ app.use(passport.session());
 
 app.use(routes.home, globalRouter);
 app.use(routes.admin, adminRouter);
+app.use(routes.portfolio, portfolioRouter);
 
 const handleListening = () => {
   console.log(`Listening on: http://localhost:${PORT}`);
